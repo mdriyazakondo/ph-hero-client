@@ -1,8 +1,12 @@
+import { useLoaderData } from "react-router";
 import Banner from "../ui/Banner";
 import OurApps from "../ui/OurApps";
 import Stats from "../ui/Stats";
+import { Suspense } from "react";
 
 const Home = () => {
+  const ourApp = useLoaderData();
+
   return (
     <div>
       <section>
@@ -12,7 +16,9 @@ const Home = () => {
         <Stats></Stats>
       </section>
       <section className="py-16">
-        <OurApps></OurApps>
+        <Suspense fallback="loading">
+          <OurApps app={ourApp}></OurApps>
+        </Suspense>
       </section>
     </div>
   );

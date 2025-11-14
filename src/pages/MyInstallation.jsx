@@ -12,7 +12,7 @@ const MyInstallation = () => {
   useEffect(() => {
     const apps = [];
     myAppsIds.forEach((id) => {
-      const isExist = allApps.find((app) => app._id == id);
+      const isExist = allApps?.apps.find((app) => app._id == id);
       if (isExist) {
         apps.push(isExist);
       }
@@ -60,7 +60,7 @@ const MyInstallation = () => {
             onClick={(e) => handleSort(e.target.value)}
             className="select bg-white"
           >
-            <option selected disabled={true}>
+            <option  disabled={true}>
               Sort By Size
             </option>
             <option value={"asc"}>Low-High</option>
