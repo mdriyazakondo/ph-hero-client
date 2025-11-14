@@ -17,23 +17,23 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/apps"),
+        loader: () => fetch("https://hero-apps-server.vercel.app/apps"),
       },
       {
         path: "/apps",
         element: <AllAppsPage></AllAppsPage>,
-        // loader: () => fetch("http://localhost:5000/apps"),
+        // loader: () => fetch("https://hero-apps-server.vercel.app/apps"),
       },
       {
         path: "/apps/:id",
         element: <AppDetails></AppDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/apps/${params.id}`),
+          fetch(`https://hero-apps-server.vercel.app/apps/${params.id}`),
       },
       {
         path: "/installations",
         element: <MyInstallation></MyInstallation>,
-        loader: () => fetch("http://localhost:5000/apps"),
+        loader: () => fetch("https://hero-apps-server.vercel.app/apps"),
       },
       {
         path: "/blogs",
